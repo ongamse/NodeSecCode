@@ -18,7 +18,7 @@ jobs:
     - name: Build Frontend Rax
       run: |
        cd frontend-rax 
-       npm install
+       npm install --force
     - name: Build Backend
       run: |
        cd backend
