@@ -33,3 +33,8 @@ jobs:
     - name: QwietAI preZero Analysis
       run: |
         SHIFTLEFT_SBOM_GENERATOR=2 ${GITHUB_WORKSPACE}/sl analyze --wait --app NodeSecCodex --tag branch=${{ github.head_ref || steps.extract_branch.outputs.branch }} --js .
+      env:
+        SHIFTLEFT_ACCESS_TOKEN: ${{ secrets.SHIFTLEFT_ACCESS_TOKEN }}
+        SHIFTLEFT_API_HOST: www.shiftleft.io
+        SHIFTLEFT_GRPC_TELEMETRY_HOST: telemetry.shiftleft.io:443
+        SHIFTLEFT_GRPC_API_HOST: api.shiftleft.io:443
