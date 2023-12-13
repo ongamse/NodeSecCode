@@ -24,7 +24,7 @@ jobs:
       id: extract_branch
     - name: NextGen Static Analysis
       run: |
-        SHIFTLEFT_SBOM_GENERATOR=2 ${GITHUB_WORKSPACE}/sl analyze --wait --app NodeSecCode --tag branch=${{ github.head_ref || steps.extract_branch.outputs.branch }} --js --cpg .
+        SHIFTLEFT_SBOM_GENERATOR=2 ${GITHUB_WORKSPACE}/sl analyze --wait --app NodeSecCode --tag branch=${{ github.head_ref || steps.extract_branch.outputs.branch }} --oss-project-dir . --js --cpg .
       env:
         SHIFTLEFT_ACCESS_TOKEN: ${{ secrets.SHIFTLEFT_ACCESS_TOKEN }}
         SHIFTLEFT_API_HOST: www.shiftleft.io
